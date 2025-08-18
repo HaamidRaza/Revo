@@ -47,7 +47,7 @@ const PrototypePage = ({
     const likedDescriptions = likedItems
       .map((item) => `${item.name}: ${item.description}`)
       .join("; ");
-    const prompt = `Based on these clothing items I have liked: "${likedDescriptions}", suggest a few creative and fashionable outfit combinations. Provide the output in a 2-4 points on the basis of the items given.(Remove the numbers)`;
+    const prompt = `Based on these clothing items I have liked: "${likedDescriptions}", suggest a few creative and fashionable outfit combinations. Provide the output in a 2-4 points on the basis of the items given.(Remove the numbers) keep it concise.`;
 
     try {
       const text = await callGeminiAPI(prompt);
@@ -76,7 +76,7 @@ const PrototypePage = ({
     setShowModal(true);
 
     const likedNames = likedItems.map((item) => item.name).join(", ");
-    const prompt = `Based on this list of clothing items: "${likedNames}", what is my overall fashion style? Provide the output in a 2 sentences on the basis of the items given.`;
+    const prompt = `Based on this list of clothing items: "${likedNames}", what is my overall fashion style? Provide the output in a 2 sentences on the basis of the items given, keep it concise.`;
 
     try {
       const text = await callGeminiAPI(prompt);
