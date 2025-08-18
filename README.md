@@ -4,6 +4,9 @@ It’s designed to showcase the startup idea with clean UI, smooth responsivenes
 
 ## Preview
 ![Home Page](/public/ReadmeImg/Home.png)
+![About Page](/public/ReadmeImg/About.png)
+![Prototype Page](/public/ReadmeImg/Prototype.png)
+![Contact Page](/public/ReadmeImg/Contact.png)
 
 ## Features 
 - **Custom Hero Section** with 3d Model using fiber & drei plus animations   
