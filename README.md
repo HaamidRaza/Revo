@@ -51,7 +51,7 @@ npm run build
 ## Contact Info  
 
 📧 Email: **achatheekhhai12@gmail.com**  
-🔗 Website: *[WEBSITE](https://revo-eight.vercel.app/)*  
+🔗 Website: *[Revo](https://revo-eight.vercel.app/)*  
 
 ---
 
