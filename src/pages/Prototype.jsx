@@ -8,12 +8,16 @@ import LikedItemsSection from "../PrototypeCompo/LikedItemsSec";
 import { mockClothes } from "../PrototypeCompo/mockData";
 import { useSwipeLogic } from "../PrototypeCompo/useSwipeLogic";
 import { callGeminiAPI } from "../PrototypeCompo/apiService";
+import Modal from "../components/Modal";
 
 const PrototypePage = ({
+  showModal,
   setShowModal,
   isLoading,
   setIsLoading,
+  error,
   setError,
+  geminiResponse,
   setGeminiResponse,
 }) => {
   const {
@@ -138,6 +142,14 @@ const PrototypePage = ({
 
         <LikedItemsSection likedItems={likedItems} />
       </div>
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        isLoading={isLoading}
+        modalTitle={modalTitle}
+        error={error}
+        geminiResponse={geminiResponse}
+      />
     </div>
   );
 };

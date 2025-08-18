@@ -44,13 +44,6 @@ function App() {
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow pt-10">{renderPage()}</main>
       <Footer />
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        isLoading={isLoading}
-        error={error}
-        geminiResponse={geminiResponse}
-      />
     </div>
   );
 }

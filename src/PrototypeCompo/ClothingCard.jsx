@@ -1,5 +1,10 @@
 const ClothingCard = ({ item, isSwiping, swipeDirection, swipeEffect }) => {
-  const bgClass = swipeEffect === 'right' ? 'bg-green-300' : swipeEffect === 'left' ? 'bg-red-300' : 'bg-white';
+  const bgClass =
+    swipeEffect === "right"
+      ? "bg-green-300"
+      : swipeEffect === "left"
+      ? "bg-red-300"
+      : "bg-white";
   const cardClass = `
     absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
     w-11/12 sm:w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl
@@ -24,9 +29,7 @@ const ClothingCard = ({ item, isSwiping, swipeDirection, swipeEffect }) => {
         />
       </div>
       <div className="p-6 bg-zinc-800">
-        <h3 className="text-2xl font-bold text-gray-300 mb-2">
-          {item.name}
-        </h3>
+        <h3 className="text-2xl font-bold text-gray-300 mb-2">{item.name}</h3>
         <p className="text-gray-400">{item.description}</p>
       </div>
     </div>

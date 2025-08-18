@@ -7,13 +7,14 @@ const Modal = ({
   isLoading,
   error,
   geminiResponse,
+  modalTitle
 }) => {
   if (!showModal) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 mt-10">
       <div className="bg-gray-100 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full flex flex-col items-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Gemini's Take</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">{modalTitle}</h3>
         {isLoading ? (
           <div className="flex items-center space-x-2">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500"></div>
