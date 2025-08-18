@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+@font-face {
+  font-family: 'Allura';
+  src: url('/fonts/Allura-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'Borel';
+  src: url('/fonts/Borel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style:normal;
+}
+/* Hide scrollbar but keep scroll functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
