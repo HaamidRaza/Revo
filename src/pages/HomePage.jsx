@@ -3,11 +3,19 @@ import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 
 // Lazy load ALL 3D components to reduce initial bundle
-const Canvas = lazy(() => import("@react-three/fiber").then(module => ({ default: module.Canvas })));
-const PerspectiveCamera = lazy(() => import("@react-three/drei").then(module => ({ default: module.PerspectiveCamera })));
+const Canvas = lazy(() =>
+  import("@react-three/fiber").then((module) => ({ default: module.Canvas }))
+);
+const PerspectiveCamera = lazy(() =>
+  import("@react-three/drei").then((module) => ({
+    default: module.PerspectiveCamera,
+  }))
+);
 const Phone = lazy(() => import("../components/Phone"));
 const HeroCamera = lazy(() => import("../components/HeroCamera"));
-const AnimatedClothingItems = lazy(() => import("../components/AnimatedModals"));
+const AnimatedClothingItems = lazy(() =>
+  import("../components/AnimatedModals")
+);
 
 // Lightweight loading component
 const Simple3DLoader = () => (
@@ -28,7 +36,9 @@ const Static3DFallback = () => (
         </div>
       </div>
       <div className="absolute -top-4 -right-4 animate-bounce">👕</div>
-      <div className="absolute -bottom-4 -left-4 animate-bounce delay-300">👗</div>
+      <div className="absolute -bottom-4 -left-4 animate-bounce delay-300">
+        👗
+      </div>
     </div>
   </div>
 );
@@ -44,7 +54,7 @@ const HomePage = () => {
     // Show 3D after a short delay to let the page load first
     const timer1 = setTimeout(() => setShow3D(true), 500);
     const timer2 = setTimeout(() => setRender3D(true), 1000);
-    
+
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -81,7 +91,7 @@ const HomePage = () => {
 
       {/* CTA Button - Always visible and fast */}
       <button
-        onClick={() => navigate('/prototype')}
+        onClick={() => navigate("/prototype")}
         className="relative z-70 px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-700 text-lg font-semibold shadow-lg shadow-purple-500/40 transition-transform transform hover:scale-105 cursor-pointer"
       >
         Try the Prototype
@@ -104,7 +114,9 @@ const HomePage = () => {
                   <PerspectiveCamera makeDefault position={[0, 0, 30]} />
                   <HeroCamera isMobile={isMobile}>
                     <Phone
-                      position={isMobile ? [2, -16, -18.3] : [-0.6, -10.8, -5.2]}
+                      position={
+                        isMobile ? [2, -16, -18.3] : [-0.6, -10.8, -5.2]
+                      }
                       rotation={[-0.5, 0, 0]}
                       scale={isMobile ? 0.5 : 0.25}
                     />
