@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { lazy, Suspense } from "react";
+import { useState, useCallback, useMemo } from "react";
 import ClothingCard from "../PrototypeCompo/ClothingCard";
 import EndOfItemsCard from "../PrototypeCompo/EndOfItems";
 import SwipeButtons from "../PrototypeCompo/SwipeButtons";
@@ -8,7 +8,9 @@ import LikedItemsSection from "../PrototypeCompo/LikedItemsSec";
 import { mockClothes } from "../PrototypeCompo/mockData";
 import { useSwipeLogic } from "../PrototypeCompo/useSwipeLogic";
 import { callGeminiAPI } from "../PrototypeCompo/apiService";
-import Modal from "../components/Modal";
+
+// Lazy load the Modal to reduce initial bundle size
+const Modal = lazy(() => import("../components/Modal"));
 
 const PrototypePage = ({
   showModal,
@@ -31,7 +33,8 @@ const PrototypePage = ({
 
   const [modalTitle, setModalTitle] = useState("");
 
-  const getStylingAdvice = async () => {
+  // Memoize the API call functions to prevent unnecessary re-creates
+  const getStylingAdvice = useCallback(async () => {
     if (likedItems.length === 0) {
       setGeminiResponse("Please like a few items first to get styling advice!");
       setModalTitle("Oops!");
@@ -58,9 +61,9 @@ const PrototypePage = ({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [likedItems, setIsLoading, setError, setShowModal, setGeminiResponse]);
 
-  const summarizeStyle = async () => {
+  const summarizeStyle = useCallback(async () => {
     if (likedItems.length === 0) {
       setGeminiResponse(
         "Please like a few items first to get a style summary!"
@@ -87,14 +90,18 @@ const PrototypePage = ({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [likedItems, setIsLoading, setError, setShowModal, setGeminiResponse]);
 
-  const renderCard = () => {
+  const currentItem = useMemo(() => {
+    if (currentIndex >= mockClothes.length) return null;
+    return mockClothes[currentIndex];
+  }, [currentIndex]);
+
+  const renderCard = useCallback(() => {
     if (currentIndex >= mockClothes.length) {
       return <EndOfItemsCard />;
     }
 
-    const currentItem = mockClothes[currentIndex];
     return (
       <ClothingCard
         item={currentItem}
@@ -103,7 +110,7 @@ const PrototypePage = ({
         swipeEffect={swipeEffect}
       />
     );
-  };
+  }, [currentItem, currentIndex, isSwiping, swipeDirection, swipeEffect]);
 
   return (
     <div
@@ -142,14 +149,18 @@ const PrototypePage = ({
 
         <LikedItemsSection likedItems={likedItems} />
       </div>
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        isLoading={isLoading}
-        modalTitle={modalTitle}
-        error={error}
-        geminiResponse={geminiResponse}
-      />
+      
+      {/* Lazy load Modal with Suspense */}
+      <Suspense fallback={<div />}>
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          isLoading={isLoading}
+          modalTitle={modalTitle}
+          error={error}
+          geminiResponse={geminiResponse}
+        />
+      </Suspense>
     </div>
   );
 };
