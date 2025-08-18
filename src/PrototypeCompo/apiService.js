@@ -9,7 +9,7 @@ export const callGeminiAPI = async (prompt) => {
     throw new Error("Gemini API key is missing. Please add VITE_GEMINI_API_KEY to your .env file or update apiService.js");
   }
   
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
   const response = await fetch(apiUrl, {
     method: "POST",
