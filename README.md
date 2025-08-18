@@ -1,12 +1,60 @@
-# React + Vite
+# Revo 
+Revo is a **modern and stylish personal startup website** built using **React + ThreeJS + Tailwind CSS**.  
+It’s designed to showcase the startup idea with clean UI, smooth responsiveness, and interactive elements.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Preview
+![Home Page](/public/ReadmeImg/Home.png)
 
-Currently, two official plugins are available:
+## Features 
+- **Custom Hero Section** with 3d Model using fiber & drei plus animations   
+- **Product Prototype**:
+  - 'Tinder' like swipe cards
+  - Integration of AI and AI summarization
+- **Contact Form**:
+  - Name, Email, and Message fields  
+  - Contact info section with **copy-to-clipboard email**  
+- **Responsive Design** (desktop & mobile optimized)
+- **Page Navigation** with state management
+- **Styled Buttons** with hover effects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation & Setup  
+Clone the repository:
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/HaamidRaza/Revo.git
+cd Revo
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## Contact Info  
+
+📧 Email: **achatheekhhai12@gmail.com**  
+🔗 Website: *Coming soon*  
+
+---
+
+## License  
+
+This project is licensed under the **MIT License**.  
+
+## Created by ME😊
+#### This was just an assignment, but I also wanted to learn react-three and AI integration, soo I made this Hope it looks good. Thanks👍
