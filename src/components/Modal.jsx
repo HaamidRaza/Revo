@@ -26,7 +26,7 @@ const Modal = ({
         )}
         <button
           onClick={() => setShowModal(false)}
-          className="mt-6 px-6 py-2 rounded-full bg-[#6bb8a2] text-white font-semibold hover:bg-[#5ea18e] transition-colors cursor-pointer"
+          className="mt-6 px-6 py-2 rounded-full bg-[#77ceb6] text-white font-semibold hover:bg-[#5ea18e] transition-colors cursor-pointer"
         >
           Close
         </button>

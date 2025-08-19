@@ -14,18 +14,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState("");
-  
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col font-sans antialiased">
-        <Header />
+        {!showModal && <Header />}
         <main className="flex-grow pt-10" >
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route 
-              path="/prototype" 
+            <Route
+              path="/prototype"
               element={
                 <PrototypePage
                   showModal={showModal}
@@ -37,12 +37,11 @@ function App() {
                   geminiResponse={geminiResponse}
                   setGeminiResponse={setGeminiResponse}
                 />
-              } 
+              }
             />
           </Routes>
         </main>
         <Footer />
-        {!showModal && <Header/>}
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
