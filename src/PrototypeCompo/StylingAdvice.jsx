@@ -47,10 +47,10 @@ const StylingAdviceDisplay = ({ advice }) => {
       {outfits.map((outfit, index) => (
         <div 
           key={index}
-          className="bg-gradient-to-br from-purple-100 to-pink-50 rounded-xl p-6 border border-purple-100 shadow-sm"
+          className="bg-gradient-to-br from-[#abe4d2] to-[#b2e9ef] rounded-xl p-6 border border-[#b2e9ef] shadow-sm"
         >
           <div className="flex items-center mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-300 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+            <div className="w-8 h-8 bg-gradient-to-r from-[#5cbaa2] to-[#40bcd0] rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
               {index + 1}
             </div>
             <h3 className="text-xl font-semibold text-gray-800">

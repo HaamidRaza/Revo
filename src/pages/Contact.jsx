@@ -1,5 +1,6 @@
 import { Check, Copy, Mail, Phone } from "lucide-react";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -20,6 +21,16 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
+    Swal.fire({
+        title: "Message Delivered!",
+        text: "Will reach out soon...",
+        icon: "success",
+        confirmButtonText: "Great!",
+        background: "#1a1a1a",
+        color: "#f1f1f1",
+        confirmButtonColor: "#3282F6",
+        iconColor: "#3282F6",
+      })
     setForm({
       name: "",
       email: "",
@@ -62,7 +73,7 @@ const Contact = () => {
               {hasCopied ? (
                 <Check className="w-5 h-5 text-green-400" />
               ) : (
-                <Copy className="w-5 h-5 text-purple-400" />
+                <Copy className="w-5 h-5 text-[#7cd7e4]" />
               )}
               <p className="ml-2">haamidshaikh404@gmail.com</p>
             </div>
@@ -74,7 +85,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Your Name"
-            className="w-full px-6 py-3 rounded-full text-gray-900 font-bold border-2 border-transparent focus:border-purple-500 focus:outline-none bg-amber-50"
+            className="w-full px-6 py-3 rounded-full text-gray-900 font-bold border-2 border-transparent focus:border-[#25a4bb] focus:outline-none bg-[#d5f2e8]"
             required
             value={form.name}
             onChange={handleChange}
@@ -83,7 +94,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Your Email"
-            className="w-full px-6 py-3 rounded-full text-gray-900 font-bold border-2 border-transparent focus:border-purple-500 focus:outline-none bg-amber-50"
+            className="w-full px-6 py-3 rounded-full text-gray-900 font-bold border-2 border-transparent focus:border-[#25a4bb] focus:outline-none bg-[#d5f2e8]"
             required
             value={form.email}
             onChange={handleChange}
@@ -92,14 +103,14 @@ const Contact = () => {
             name="message"
             rows="5"
             placeholder="Your Message"
-            className="w-full px-6 py-3 rounded-2xl text-gray-900 font-bold border-2 border-transparent focus:border-purple-500 focus:outline-none bg-amber-50"
+            className="w-full px-6 py-3 rounded-2xl text-gray-900 font-bold border-2 border-transparent focus:border-[#25a4bb] focus:outline-none bg-[#d5f2e8]"
             required
             value={form.message}
             onChange={handleChange}
           />
           <button
             type="submit"
-            className="w-full px-8 py-3 bg-purple-600 cursor-pointer text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-color"
+            className="w-full px-8 py-3 bg-[#40bcd0] cursor-pointer text-white font-semibold rounded-full shadow-lg hover:bg-[#25a4bb] transition-color"
           >
             Send Message
           </button>

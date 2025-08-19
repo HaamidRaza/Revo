@@ -23,7 +23,7 @@ const Header = () => {
   const currentPage = getCurrentPage();
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-purple-200 bg-opacity-90 backdrop-blur-md shadow-md z-60">
+    <nav className="fixed top-0 left-0 w-full bg-[#5cbaa2] bg-opacity-90 backdrop-blur-md shadow-md z-60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -43,8 +43,8 @@ const Header = () => {
                   to={page.path}
                   className={`px-3 py-2 rounded-md text-sm font-medium ${
                     currentPage === page.name
-                      ? "text-purple-600 font-bold bg-purple-200 border-1"
-                      : "text-gray-700 hover:bg-purple-300"
+                      ? "text-gray-900 font-bold border-[#349880] border-2 hover:bg-[#349880] transition-transform transform hover:scale-105"
+                      : "text-gray-700 hover:bg-[#349880] hover:text-gray-900"
                   }`}
                 >
                   {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
@@ -57,7 +57,7 @@ const Header = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-md text-gray-700 hover:bg-purple-300 focus:outline-none"
+              className="p-2 rounded-md text-gray-700 hover:bg-[#5ea08d] focus:outline-none cursor-pointer"
             >
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -67,7 +67,7 @@ const Header = () => {
 
       {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-purple-100 px-2 pt-2 pb-3 space-y-1 font-sans">
+        <div className="md:hidden bg-[#abe4d2] px-2 pt-2 pb-3 space-y-1 font-sans">
           {pages.map((page) => (
             <Link
               key={page.name}
@@ -75,8 +75,8 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 currentPage === page.name
-                  ? "text-purple-600 font-bold bg-purple-200"
-                  : "text-gray-700 hover:bg-purple-300"
+                  ? "text-gray-900 font-bold bg-[#5ea08d]"
+                  : "text-gray-700 hover:bg-[#79cfb6]"
               }`}
             >
               {page.name.charAt(0).toUpperCase() + page.name.slice(1)}

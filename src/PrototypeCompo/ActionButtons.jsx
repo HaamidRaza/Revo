@@ -10,7 +10,7 @@ const ActionButtons = ({ onGetStylingAdvice, onSummarizeStyle, isLoading }) => {
                    ${
                      isLoading
                        ? "bg-gray-400 cursor-not-allowed"
-                       : "bg-gradient-to-r from-purple-900 to-indigo-600 text-white hover:from-purple-500 hover:to-indigo-700 focus:ring-purple-900"
+                       : "bg-transparent border-2 border-purple-900 text-white hover:border-indigo-700 focus:ring-purple-900"
                    }`}
       >
         ✨ Get Styling Advice
@@ -22,7 +22,7 @@ const ActionButtons = ({ onGetStylingAdvice, onSummarizeStyle, isLoading }) => {
                    ${
                      isLoading
                        ? "bg-gray-400 cursor-not-allowed"
-                       : "bg-gradient-to-r from-pink-900 to-orange-500 text-white hover:from-pink-500 hover:to-orange-600 focus:ring-pink-900"
+                       : "bg-transparent border-2 border-pink-900 text-white  hover:border-orange-600 focus:ring-pink-900"
                    }`}
       >
         ✨ Summarize My Style

@@ -14,12 +14,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState("");
-
+  
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-gray-50 font-sans antialiased">
+      <div className="min-h-screen flex flex-col font-sans antialiased">
         <Header />
-        <main className="flex-grow pt-10">
+        <main className="flex-grow pt-10" >
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -43,7 +43,6 @@ function App() {
         </main>
         <Footer />
         
-        {/* Modal should be at App level since it's shared */}
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
