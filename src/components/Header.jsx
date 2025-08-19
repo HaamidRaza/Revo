@@ -64,26 +64,30 @@ const Header = () => {
           </div>
         </div>
       </div>
+{/* Mobile Dropdown */}
+<div
+  className={`md:hidden absolute top-16 left-0 w-full bg-[#5cbaa2] px-2 pt-2 pb-3 space-y-1 font-sans transform transition-all duration-300 ease-in-out shadow-lg ${
+    menuOpen
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 -translate-y-5 pointer-events-none"
+  }`}
+>
+  {pages.map((page) => (
+    <Link
+      key={page.name}
+      to={page.path}
+      onClick={() => setMenuOpen(false)}
+      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+        currentPage === page.name
+          ? "text-gray-900 font-bold bg-[#abe4d2]"
+          : "text-gray-700 hover:bg-[#79cfb6]"
+      }`}
+    >
+      {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
+    </Link>
+  ))}
+</div>
 
-      {/* Mobile Dropdown */}
-      {menuOpen && (
-        <div className="md:hidden bg-[#abe4d2] px-2 pt-2 pb-3 space-y-1 font-sans">
-          {pages.map((page) => (
-            <Link
-              key={page.name}
-              to={page.path}
-              onClick={() => setMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                currentPage === page.name
-                  ? "text-gray-900 font-bold bg-[#5ea08d]"
-                  : "text-gray-700 hover:bg-[#79cfb6]"
-              }`}
-            >
-              {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
-            </Link>
-          ))}
-        </div>
-      )}
     </nav>
   );
 };

@@ -67,7 +67,7 @@ const AboutPage = () => {
             </span>
             , we believe fashion should be sustainable, accessible, and fun. Our
             mission is to give your wardrobe a second life by making it effortless
-            to swap, share, and shine — while reducing waste and building a
+            to swap, share, and shine - while reducing waste and building a
             community of conscious trendsetters.
           </p>
         </div>

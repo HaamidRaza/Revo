@@ -7,7 +7,7 @@ const SwipeButtons = ({ onSwipe, disabled = false }) => {
       <button
         onClick={() => onSwipe("right")}
         disabled={disabled}
-        className="p-4 rounded-full bg-transparent border-2 border-red-400 text-white shadow-lg hover:bg-red-400 hover:scale-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-4 rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 hover:scale-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Not interested, swipe left"
       >
         <X size={32} />
@@ -15,7 +15,7 @@ const SwipeButtons = ({ onSwipe, disabled = false }) => {
       <button
         onClick={() => onSwipe("left")}
         disabled={disabled}
-        className="p-4 rounded-full border-green-600 border-2 text-white shadow-lg hover:bg-green-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-4 rounded-full bg-green-600 text-white shadow-lg hover:bg-green-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Interested, swipe right"
       >
         <Heart size={32} />

@@ -92,7 +92,7 @@ const HomePage = () => {
       {/* CTA Button - Always visible and fast */}
       <button
         onClick={() => navigate("/prototype")}
-        className="relative z-70 px-6 py-3 rounded-2xl border-2 border-[#79cfb6] hover:bg-[#79cfb6] text-lg font-semibold shadow-md shadow-[#abe4d2]/40 transition-transform transform hover:scale-105 cursor-pointer"
+        className="relative z-70 px-6 py-3 rounded-2xl border-2 border-[#6bb8a2] hover:bg-[#6bb8a2] text-lg font-semibold shadow-md shadow-[#abe4d2]/40 transition-transform transform hover:scale-105 cursor-pointer"
       >
         Try the Prototype
       </button>

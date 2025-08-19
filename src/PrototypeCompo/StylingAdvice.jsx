@@ -43,7 +43,7 @@ const StylingAdviceDisplay = ({ advice }) => {
   const outfits = parseAdvice(advice);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-[#277a68]">
       {outfits.map((outfit, index) => (
         <div 
           key={index}
