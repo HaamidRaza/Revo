@@ -119,7 +119,7 @@ const HomePage = () => {
                       }
                       rotation={[-0.5, 0, 0]}
                       scale={isMobile ? 0.5 : 0.25}
-                    /> 
+                    />
                   </HeroCamera>
                   <AnimatedClothingItems />
                   <ambientLight intensity={1.5} />

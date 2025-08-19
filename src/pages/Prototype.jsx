@@ -149,8 +149,6 @@ const PrototypePage = ({
 
         <LikedItemsSection likedItems={likedItems} />
       </div>
-      
-      {/* Lazy load Modal with Suspense */}
       <Suspense fallback={<div />}>
         <Modal
           showModal={showModal}

@@ -42,7 +42,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        
+        {!showModal && <Header/>}
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
