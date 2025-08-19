@@ -11,7 +11,7 @@ const Modal = ({
   if (!showModal) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 h-full flex items-center justify-center z-50 p-4 mt-10">
+    <div className="fixed inset-0 bg-transparent opacity-50 flex items-center justify-center z-50 p-4 mt-10">
       <div className="bg-[#5cbaa2] rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full flex flex-col items-center">
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Gemini's Take</h3>
         {isLoading ? (
